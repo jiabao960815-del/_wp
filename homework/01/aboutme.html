@@ -1,0 +1,114 @@
+https://github.com/ccc114b/_wp/
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溫家寶 | 個人作品集</title>
+    <style>
+        :root {
+            --main-green: #00ff41; /* 經典駭客綠 */
+            --bg-black: #0d1117;
+            --card-bg: #161b22;
+            --text-gray: #8b949e;
+        }
+        body {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            background-color: var(--bg-black);
+            color: #c9d1d9;
+            margin: 0;
+            padding: 0;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
+        
+        header { border-bottom: 1px solid #30363d; padding-bottom: 30px; margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; color: var(--main-green); margin: 0; }
+        .school { font-size: 1.2rem; color: #58a6ff; margin-top: 10px; }
+        
+        .section-title {
+            color: var(--main-green);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::before { content: "> "; margin-right: 10px; }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--main-green); transform: translateY(-5px); }
+
+        .skill-tag {
+            display: inline-block;
+            border: 1px solid var(--main-green);
+            color: var(--main-green);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin: 5px;
+        }
+
+        .terminal-text { color: var(--text-gray); font-size: 0.9rem; }
+        footer { text-align: center; margin-top: 50px; color: var(--text-gray); font-size: 0.8rem; }
+
+        /* 動態打字效果預留區 */
+        .cursor { display: inline-block; width: 10px; height: 20px; background: var(--main-green); animation: blink 1s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>溫家寶 <span class="cursor"></span></h1>
+        <div class="school">國立金門大學 資訊工程學系</div>
+        <p class="terminal-text">// 正在探索軟體開發、演算法與系統架構的世界...</p>
+    </header>
+
+    <section>
+        <div class="section-title">關於我 (About Me)</div>
+        <div class="card">
+            <p>你好！我是就讀於金門大學資工系的學生。熱衷於透過程式碼解決問題，並不斷學習新技術。</p>
+            <p>目前的學習重點：[例如：網頁開發 / AI 人工智慧 / 嵌入式系統 / 網路安全]</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">核心技術 (Tech Stack)</div>
+        <div class="card">
+            <span class="skill-tag">C / C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Linux</span>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">專案與經歷 (Projects)</div>
+        <div class="card">
+            <h3>📂 [專案名稱 A]</h3>
+            <p class="terminal-text">使用技術：C++, Arduino</p>
+            <p>描述：這是我在某課程中開發的一個感測器系統，解決了金門當地的...問題。</p>
+        </div>
+        <div class="card">
+            <h3>📂 [專案名稱 B]</h3>
+            <p class="terminal-text">使用技術：HTML/CSS/JS</p>
+            <p>描述：一個簡單的個人靜態網頁，展現我的前端基礎能力。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built with ❤️ and HTML/CSS | Last Update: 2024</p>
+    </footer>
+</div>
+
+</body>
+</html>
