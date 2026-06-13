@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 綜合意向調查問卷</title>
+    <style>
+        /* 基礎設定 */
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #f4f7f6;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* 容器設計 */
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h2 { 
+            color: var(--primary-color); 
+            margin-top: 0;
+            text-align: center;
+        }
+
+        p.subtitle { 
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* 區塊分割線 */
+        section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* 表單標籤與輸入框 */
+        label {
+            display: block;
+            font-weight: 600;
+            margin: 15px 0 8px;
+            color: var(--text-color);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="datetime-local"],
+        input[type="url"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+        }
+
+        /* 群組佈局 (Checkbox & Radio) */
+        .group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 5px 0;
+        }
+
+        .group div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* 範圍與顏色 */
+        .range-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        input[type="range"] {
+            flex-grow: 1;
+        }
+
+        input[type="color"] {
+            width: 50px;
+            height: 40px;
+            padding: 0;
+            border: none;
+            cursor: pointer;
+            background: none;
+        }
+
+        /* 按鈕設計 */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 2;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover {
+            background-color: #357ABD;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .reset-btn {
+            flex: 1;
+            background-color: #95a5a6;
+        }
+
+        .reset-btn:hover {
+            background-color: #7f8c8d;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>用戶體驗深度調查</h2>
+    <p class="subtitle">我們想了解您在 2026 年的使用習慣</p>
+    
+    <form action="#" method="post">
+        
+        <section>
+            <label for="name">您的姓名 (Text)</label>
+            <input type="text" id="name" name="name" placeholder="王小明" required>
+
+            <label for="email">電子郵件 (Email)</label>
+            <input type="email" id="email" name="email" placeholder="hello@example.com" required>
+
+            <label for="age">年齡 (Number)</label>
+            <input type="number" id="age" name="age" min="1" max="120" value="25">
+        </section>
+
+        <section>
+            <label>感興趣的主題 (Checkbox)</label>
+            <div class="group">
+                <div><input type="checkbox" id="ai" name="interest" value="ai"><label for="ai">人工智慧</label></div>
+                <div><input type="checkbox" id="web3" name="interest" value="web3"><label for="web3">Web3</label></div>
+                <div><input type="checkbox" id="design" name="interest" value="design"><label for="design">介面設計</label></div>
+            </div>
+
+            <label>目前的裝置 (Radio)</label>
+            <div class="group">
+                <div><input type="radio" id="ios" name="device" value="ios"><label for="ios">iOS</label></div>
+                <div><input type="radio" id="android" name="device" value="android"><label for="android">Android</label></div>
+                <div><input type="radio" id="pc" name="device" value="pc"><label for="pc">PC/Mac</label></div>
+            </div>
+        </section>
+
+        <section>
+            <label for="date">註冊日期 (Date)</label>
+            <input type="date" id="date" name="reg_date">
+
+            <label for="meeting">預約更新說明會 (Datetime-local)</label>
+            <input type="datetime-local" id="meeting" name="meeting">
+
+            <label for="doc">上傳證明文件 (File)</label>
+            <input type="file" id="doc" name="doc">
+        </section>
+
+        <section>
+            <label for="score">服務滿意度 (Range)</label>
+            <div class="range-container">
+                <span>很不滿意</span>
+                <input type="range" id="score" name="score" min="0" max="10" step="1">
+                <span>非常滿意</span>
+            </div>
+
+            <label for="fav_color">自訂系統顏色 (Color)</label>
+            <input type="color" id="fav_color" name="fav_color" value="#4A90E2">
+            
+            <label for="blog">個人作品集連結 (Url)</label>
+            <input type="url" id="blog" name="blog" placeholder="https://github.com/yourname">
+        </section>
+
+        <div class="btn-group">
+            <button type="submit">確認提交</button>
+            <button type="reset" class="reset-btn">清空</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
