@@ -1,0 +1,26 @@
+<div class="posts-header">
+  <h2>所有文章</h2>
+  <a href="/posts/new" class="btn btn-primary">新增文章</a>
+</div>
+
+<% if (posts.length === 0) { %>
+  <div class="empty-state">
+    <p>目前還沒有任何文章，立即<a href="/posts/new">新增一篇</a>吧！</p>
+  </div>
+<% } else { %>
+  <% posts.forEach(post => { %>
+    <article class="post-card">
+      <h3><a href="/posts/<%= post.id %>"><%= post.title %></a></h3>
+      <div class="post-meta">
+        <span>建立於 <%= new Date(post.created_at).toLocaleString('zh-TW') %></span>
+        <% if (post.updated_at !== post.created_at) { %>
+          <span> | 更新於 <%= new Date(post.updated_at).toLocaleString('zh-TW') %></span>
+        <% } %>
+      </div>
+      <p><%= post.content.substring(0, 200) %><% if (post.content.length > 200) { %>...<% } %></p>
+      <div class="post-actions">
+        <a href="/posts/<%= post.id %>" class="btn btn-sm">閱讀更多</a>
+      </div>
+    </article>
+  <% }); %>
+<% } %>

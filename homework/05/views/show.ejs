@@ -1,0 +1,17 @@
+<article class="post-full">
+  <h2><%= post.title %></h2>
+  <div class="post-meta">
+    <span>建立於 <%= new Date(post.created_at).toLocaleString('zh-TW') %></span>
+    <% if (post.updated_at !== post.created_at) { %>
+      <span> | 更新於 <%= new Date(post.updated_at).toLocaleString('zh-TW') %></span>
+    <% } %>
+  </div>
+  <div class="post-content"><%= post.content %></div>
+  <div class="post-actions">
+    <a href="/posts/<%= post.id %>/edit" class="btn">編輯</a>
+    <form action="/posts/<%= post.id %>/delete" method="POST" style="display:inline">
+      <button type="submit" class="btn btn-danger" onclick="return confirm('確定刪除此文章？')">刪除</button>
+    </form>
+    <a href="/" class="btn btn-secondary">返回列表</a>
+  </div>
+</article>
